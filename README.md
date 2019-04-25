@@ -14,7 +14,7 @@ Groot Graphs is used to index database for searching and build graph for visuali
 + Run *vsearch* to get the clustered database
 + Index the database for building graph by running *groot*
 ### Fastq file processing
-+ Raw reads in fastq files are trimmed out by FastQC with default Q = 20
++ Raw reads in fastq files are trimmed out by FastQC with default Q = 20, this will be changed after testing for TP,FP,TN,FN
 + Visualisation of number of reads before and after quality check can be provided
 
 ### Alignment reads
@@ -26,5 +26,25 @@ Groot Graphs is used to index database for searching and build graph for visuali
 ### List of metrics
 
 ### Visualisation
+Graph genome is visualised by Bandage to get the overview about variation, hitting when aligning the query sequence.
 
-### 
+## Simulation data
+Simulated fastq files will be created from fasta files:
+  * simulation for the read length
+  * simulation for the error rate
+  * simulation for the contaminat reads
+  * simulation for ...
+
+### Estimating the FDR
+#### One query sample versus graph
+
+#### Multiple query samples versus graph
+
+#### Adding mutation rate to query samples
+
+### Estimated sensitivity and specificity
+#### Estimating TP and FN
+
+#### Estimating FP and TN
+
+#### Calculating sensitivity and specificity
