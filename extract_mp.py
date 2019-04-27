@@ -12,8 +12,14 @@ with open(filepath) as fp:
        line = fp.readline()
        n += 1
 
+### obtain the dictionary for checking number of protein of each accession_no
+access_vs_no_prot = dict()
+
+
+### extract all fna files to folder fna_out
 os.mkdir('fna_out')
 for id in accession_no:
+  # extract fna files
     genbank_file = os.getcwd() + '/gb_files/'+id+'.gb'
     records = SeqIO.read(open(genbank_file, "r"), "genbank")
     sequence = records.seq
@@ -26,6 +32,8 @@ for id in accession_no:
     with open(msa_file, 'w') as msa:
         for i in range(len(start)):
             msa.write('>%s_%s %i_%i\n%s\n' % (id, protein_name[i], start[i], end[i], pep_seq[i]))
+  # dictionary for number of protein per accession_no
+    access_vs_no_prot[id] = len(protein_name)
 
 
 # combine all fna files to one and save under fna format
