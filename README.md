@@ -18,6 +18,7 @@ Groot Graphs is used to index database for searching and build graph for visuali
 + Visualisation of number of reads before and after quality check can be provided
 
 ### Alignment reads
+After multiple sequence alignment database is built up, alignment reads from fastq files can be started with shell script to run python script, a table result for read alignment is extracted with information include:
 
 ### Building graph
 + Multiple reference graph is visualised by Bandage

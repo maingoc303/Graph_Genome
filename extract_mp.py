@@ -12,8 +12,8 @@ with open(filepath) as fp:
        line = fp.readline()
        n += 1
 
-### obtain the dictionary for checking number of protein of each accession_no
-access_vs_no_prot = dict()
+  ### obtain the dictionary for checking number of protein of each accession_no
+  access_vs_no_prot = dict()
 
 
 ### extract all fna files to folder fna_out
@@ -43,6 +43,7 @@ for file in file_names:
     with open(os.getcwd()+'/fna_out/'+file) as f:
         content = f.read().strip('\n')
     output += content + '\n'  #  This will use a placeholder of 0 for all labels.
+    
 with open('combine.fna', 'wb') as f:
     f.write(output)
 
