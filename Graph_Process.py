@@ -2,16 +2,16 @@ def protein_list(id):
 	'''
 	this function return the text file contain the list of 
 	protein of each genome
-	input is identity % for clustering lead to location where 
+	input is id - identity % for clustering lead to location where 
 	output of cluster extracted
 	'''
 	import os
 	# run vsearch to get output of each cluster
 	os.system('vsearch --cluster_size combine.fna --id '+str(id)+' --clusters Cluster')
 	# extract file for list of protein in cluster
-	prot_list = os.system('grep '>' Cluster* > protein_name.txt')
+	prot_list = os.system('grep ">" Cluster* > protein_name.csv')
 	# delete all Cluster extracted:
-	os.system('rm Cluster*')
+	rm=os.system('rm Cluster*')
 	return prot_list
 
 f =  protein_list(0.5) # input identity % for clustering mature peptides
@@ -59,7 +59,7 @@ def size_clust(dataframe):
 	prot = pd.DataFrame(no_prot_in_clust)
 	prot['sum']=no_prot_in_clust.sum(axis=1)
 	print('\n 2. Number of protein in each cluster:')
-	print(prot['sum'])
+	#print(prot['sum'])
 	return prot['sum']
 
 def clust_icl_all_prot(dataframe):	
@@ -72,7 +72,7 @@ def clust_icl_all_prot(dataframe):
 	print("\n 3. There are %i clusters have exactly one protein from every genome" % i)
 	print(clust)
 
-def prot_in_multi_clust(dataframe)
+def prot_in_multi_clust(dataframe):
 	import pandas as pd
 	# Q4: How many proteins are in multiple cluster?
 	# create new column for checking prot from genome in cluster
@@ -84,6 +84,7 @@ def prot_in_multi_clust(dataframe)
 	multi['sum'] = unique.sum(axis=1)
 	print('\n 4. %i proteins are in multiple cluster' % sum(multi['sum']>1))
 	return sum(multi['sum']>1)
+
 
 def visual(dataframe):
 	from bokeh.io import output, show

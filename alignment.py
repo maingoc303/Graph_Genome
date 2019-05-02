@@ -20,10 +20,10 @@ def simulate(fa_file, N_reads, read_length, mutation_rate, error_rate):
 	error rate
 	'''
 	import os
-	path = os.getcwd() + '/fa_files/'
+	path = os.getcwd() + '/'#fa_files/'
 	os.system('wgsim -R 0 -r '+str(mutation_rate)+' -e '+str(error_rate)+' -N '+
-		str(N_reads)+' -1 '+str(read_length)+' -2 '+str(read_length)+ ' '+ str(id)
-		+ ' '+ str(id)+'_1.fastq'+ ' '+ str(id)+'_2.fastq')
+		str(N_reads)+' -1 '+str(read_length)+' -2 '+str(read_length)+ ' '+path
+		+fa_file+ ' f1.fastq f2.fastq')
 
 def align(fastq_file):
 	import os
