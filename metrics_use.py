@@ -19,7 +19,7 @@ data["accession_no"] = new[0]
 data["prot"] = new[1]
 
 # Dropping old Name columns
-data.drop(columns=["protein"], inplace=True)
+data.drop(columns=["prot"], inplace=True)
 
 # create new column for checking prot from genome in cluster
 data['unique']=data['accession_no']+'_'+data['prot']

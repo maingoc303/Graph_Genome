@@ -20,3 +20,7 @@ t$pct_detect=round(t$No_of_detected_prot/t$tot_prot*100,2)
 t
 
 write.csv(table(t$left),file = "t.csv")
+install.packages("rmarkdown", type = "source")
+library(rmarkdown)
+
+

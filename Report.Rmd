@@ -19,7 +19,7 @@ library(rmarkdown)
 This is html report for siumaltion reads to calculate FDR, TP, FP, TN, FN.
 
 ```{r report1 result by each of genome, echo=F}
-report1=read.csv('test.csv',sep='\t',header=F)
+report1=read.csv('output.csv',sep='\t',header=F)
 colnames(report1)=c("gene","read_count","length","coverage")
 #report1$acc_no = 
 

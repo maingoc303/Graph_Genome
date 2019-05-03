@@ -35,7 +35,7 @@ def clust_info(f):
 	# making seperate last name column from new data frame
 	data["prot"] = new[1]
 	# Dropping old Name columns
-	data.drop(columns=["protein"], inplace=True)
+	data.drop(columns=["prot"], inplace=True)
 	# return dataframe
 	return data
 

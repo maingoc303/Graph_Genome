@@ -46,7 +46,7 @@ for id in accession_no:
     access_vs_no_prot[id] = len(protein_name)
     with open(path+'/support_files/access_vs_prot.csv','w') as f:
       for key in access_vs_no_prot.keys():
-        f.write("%s,%s\n"%(key,access_vs_no_prot[key]))
+        f.write("%s,%s\n"%(key.replace(".",""),access_vs_no_prot[key]))
 
 
 # combine all fna files to one and save under fna format
