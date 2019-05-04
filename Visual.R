@@ -22,5 +22,5 @@ t
 write.csv(table(t$left),file = "t.csv")
 install.packages("rmarkdown", type = "source")
 library(rmarkdown)
-
+rmarkdown::render('Report.Rmd', clean=TRUE)
 
