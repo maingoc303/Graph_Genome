@@ -1,6 +1,14 @@
 ---
 title: "Report"
-output: html_document
+output:
+  html_document:
+    highlight: tango
+    number_sections: yes
+    theme: cerulean
+    toc: yes
+    toc_float: yes
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -14,7 +22,7 @@ library(rmarkdown)
 #getwd()
 ```
 
-## Result of simulation
+## Result of simulation with no error or mutation rate
 
 ### Simulation for each of reference genome
 
@@ -49,17 +57,21 @@ plot(x$pct_detect,ylim = c(60,100), ylab="% detected protein",pch=20,col="blue")
 lines(x$pct_detect,col="grey")
 ```
 
-### Simulation for mixture of 3 reference genomes
+### Simulation for mixture of 4 query genomes
 
 
-### Simulation for mixture of contaminations
+### Simulation for mixture of 17 contaminations
 
 
-### Simulation for mixture of reference and contaminations
+### Simulation for mixture of 3 queries and 17 contaminations
 
 
+## Simulation analysis with error and mutation rate
+
+### Error rate from 0 to 0.1\%
 
 
+### Mutation rate from 0 to 0.1\%
 
 
 

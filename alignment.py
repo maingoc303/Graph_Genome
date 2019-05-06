@@ -11,8 +11,8 @@ from Bio import SeqIO
 
 # simulation
 #list_fasta_files = []
-input_folder = str(imput('Name of folder you want to save all fastq files for running alignment'))
-os.system('mkdir '+input_folder+'/')
+input_folder = str(input('Name of folder you want to save all fastq files for running alignment'))
+os.system('mkdir '+input_folder)
 
 def simulate(fa_file, N_reads, read_length, mutation_rate, error_rate):
 	'''
@@ -23,8 +23,8 @@ def simulate(fa_file, N_reads, read_length, mutation_rate, error_rate):
 	'''
 	#import os
 	path = os.getcwd() 
-	os.system('wgsim -R 0 -r '+str(mutation_rate)+' -e '+str(error_rate)+' -N '+ str(N_reads)+' -1 '+str(read_length)+' -2 '+str(read_length)+ ' fa_files/'+fa_file+ ' fq_files/'+fa_file.replace('.fa','1.fastq') + ' fq_files/' + fa_file.replace('.fa','2.fastq'))
-	os.system('cat fq_files/'+fa_file.replace('.fa','1.fastq') +' '+input_folder + fa_file.replace('.fa','2.fastq')+' > fq_files/'+fa_file.replace('.fa','.fastq'))
+	os.system('wgsim -R 0 -r '+str(mutation_rate)+' -e '+str(error_rate)+' -N '+ str(N_reads)+' -1 '+str(read_length)+' -2 '+str(read_length)+ ' contamination/'+fa_file+ ' fq_files/'+fa_file.replace('.fa','1.fastq') + ' fq_files/' + fa_file.replace('.fa','2.fastq'))
+	os.system('cat fq_files/'+fa_file.replace('.fa','1.fastq') +' '+input_folder + fa_file.replace('.fa','2.fastq')+' > '+input_folder+fa_file.replace('.fa','.fastq'))
 	os.system('rm fq_files/'+fa_file.replace('.fa','1.fastq') +' '+input_folder + fa_file.replace('.fa','2.fastq'))
 
 output_folder = str(input('Name of folder you want to save all result after alignment '))+'/'
@@ -39,7 +39,7 @@ def align(fq_file):
 
 
 path=os.getcwd()
-file_names = os.listdir(path+'/fa_files/')
+file_names = os.listdir(path+'/contamination/')
 N_reads = int(input("How many reads will be generated? "))
 read_length = int(input("What is read length? "))
 mutation_rate = float(input("Mutation rate (decimal number - from 0 to 0.01) in sequences? "))

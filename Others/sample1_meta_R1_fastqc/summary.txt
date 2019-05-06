@@ -1,0 +1,11 @@
+PASS	Basic Statistics	sample1_meta_R1.fastq
+FAIL	Per base sequence quality	sample1_meta_R1.fastq
+PASS	Per sequence quality scores	sample1_meta_R1.fastq
+FAIL	Per base sequence content	sample1_meta_R1.fastq
+FAIL	Per base GC content	sample1_meta_R1.fastq
+FAIL	Per sequence GC content	sample1_meta_R1.fastq
+WARN	Per base N content	sample1_meta_R1.fastq
+WARN	Sequence Length Distribution	sample1_meta_R1.fastq
+WARN	Sequence Duplication Levels	sample1_meta_R1.fastq
+FAIL	Overrepresented sequences	sample1_meta_R1.fastq
+FAIL	Kmer Content	sample1_meta_R1.fastq
